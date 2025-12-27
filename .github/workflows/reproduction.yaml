@@ -1,0 +1,12 @@
+on:
+  push:
+
+jobs:
+  reproduction:
+    runs-on: [ ubuntu-24.04 ]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - run: bun run payload info
+      - run: bun run --bun payload info
